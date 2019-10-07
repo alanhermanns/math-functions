@@ -87,7 +87,11 @@ to use the + operator for string concatenation.
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
-
+    let firstNum = sum(sumArr[0], sumArr[1]);
+    firstNum.pop();
+    firstNum = sum(firstNum, sumArr[2]);
+    firstNum.pop();
+    return [firstNum, sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ',' + ' was passed in as an arrray of numbers, and ' + firstNum + ' is their sum.']
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -110,7 +114,11 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
-
+    let firstNum = multiply(multArr[0], multArr[1]);
+    firstNum.pop();
+    firstNum = multiply(firstNum, multArr[2]);
+    firstNum.pop();
+    return [firstNum, 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + firstNum + '.']
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
