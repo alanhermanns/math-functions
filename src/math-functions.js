@@ -14,7 +14,7 @@ example and uses the values that were input into the function:
 export function sum(a, b) {
     let firstA = parseInt(a);
     let firstB = parseInt(b);
-    return [(firstA + firstB), '"The sum of ' + firstA + ' and ' + firstB + ' is ' + (firstA + firstB) + '.'];
+    return [(firstA + firstB), 'The sum of ' + firstA + ' and ' + firstB + ' is ' + (firstA + firstB) + '.'];
 
 }
 
@@ -31,7 +31,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 export function multiply(a, b) {
     let firstA = parseInt(a);
     let firstB = parseInt(b);
-    return [(firstA * firstB), '"The product of ' + firstA + ' and ' + firstB + ' is ' + (firstA * firstB) + '.'];
+    return [(firstA * firstB), 'The product of ' + firstA + ' and ' + firstB + ' is ' + (firstA * firstB) + '.'];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -64,7 +64,7 @@ export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
     theProduct.pop();
     theProduct = multiply(theProduct, c);
     theProduct.pop();
-    return [theSum, theProduct, a + ' and ' + b + ' and ' + c + ' sum to ' + theSum, 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.' ];
+    return [theSum, theProduct, a + ' and ' + b + ' and ' + c + ' sum to ' + theSum + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.'];
 
 }
 
@@ -139,7 +139,14 @@ This function should be dynamic, accepting an array of any length.
 */
 
 export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    let firstNum = multiply(dynamicArray[0], dynamicArray[1]);
+    firstNum.pop();
+    let numbersString = '';
+        for (i = 2, i <=dynamicArray.length, i++) {
+       firstNum = multiply(firstNum, dynamicArray[i]);
+       firstNum.pop();
+       
+    }
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
