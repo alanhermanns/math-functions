@@ -12,6 +12,9 @@ example and uses the values that were input into the function:
 */
 
 export function sum(a, b) {
+    let firstA = parseInt(a);
+    let firstB = parseInt(b);
+    return [(firstA + firstB), 'The sum of ' + firstA + ' and ' + firstB + ' is ' + (firstA + firstB) + '.'];
 
 }
 
@@ -26,7 +29,9 @@ Write a function called multiply() that takes in two numbers as arguments and re
 */
 
 export function multiply(a, b) {
-
+    let firstA = parseInt(a);
+    let firstB = parseInt(b);
+    return [(firstA * firstB), 'The product of ' + firstA + ' and ' + firstB + ' is ' + (firstA * firstB) + '.'];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -51,6 +56,15 @@ how to do this. However, you may continue to use the + operator for string conca
 */
 
 export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
+    let theSum = sum(a, b);
+    theSum.pop();
+    theSum = sum(theSum, c);
+    theSum.pop();
+    let theProduct = multiply(a, b);
+    theProduct.pop();
+    theProduct = multiply(theProduct, c);
+    theProduct.pop();
+    return [theSum, theProduct, a + ' and ' + b + ' and ' + c + ' sum to ' + theSum + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.'];
 
 }
 
@@ -73,7 +87,11 @@ to use the + operator for string concatenation.
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
-
+    let firstNum = sum(sumArr[0], sumArr[1]);
+    firstNum.pop();
+    firstNum = sum(firstNum, sumArr[2]);
+    firstNum.pop();
+    return [firstNum, sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ',' + ' was passed in as an arrray of numbers, and ' + firstNum + ' is their sum.']
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -96,7 +114,11 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
-
+    let firstNum = multiply(multArr[0], multArr[1]);
+    firstNum.pop();
+    firstNum = multiply(firstNum, multArr[2]);
+    firstNum.pop();
+    return [firstNum, 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + firstNum + '.']
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -117,7 +139,15 @@ This function should be dynamic, accepting an array of any length.
 */
 
 export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    let firstNum = multiply(dynamicArray[0], dynamicArray[1]);
+    firstNum.pop();
+    let numbersString = 'The numbers ' + dynamicArray[0] + ',' + dynamicArray[1];
+        for (let i = 2; i < dynamicArray.length; i++) {
+       firstNum = multiply(firstNum, dynamicArray[i]);
+       firstNum.pop();
+       numbersString = numbersString + ',' + dynamicArray[i];
+    }
+    return [firstNum, numbersString + ' have a product of ' + firstNum + '.']
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
