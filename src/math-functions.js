@@ -29,7 +29,9 @@ Write a function called multiply() that takes in two numbers as arguments and re
 */
 
 export function multiply(a, b) {
-
+    let firstA = parseInt(a);
+    let firstB = parseInt(b);
+    return [(firstA * firstB), '"The product of ' + firstA + ' and ' + firstB + ' is ' + (firstA * firstB) + '.'];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -54,6 +56,15 @@ how to do this. However, you may continue to use the + operator for string conca
 */
 
 export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
+    let theSum = sum(a, b);
+    theSum.pop();
+    theSum = sum(theSum, c);
+    theSum.pop();
+    let theProduct = multiply(a, b);
+    theProduct.pop();
+    theProduct = multiply(theProduct, c);
+    theProduct.pop();
+    return [theSum, theProduct, a + ' and ' + b + ' and ' + c + ' sum to ' + theSum, 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.' ];
 
 }
 
